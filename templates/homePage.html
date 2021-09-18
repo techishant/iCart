@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="p-5 bg-dark text-light rounded-3">
+  <div class="container py-5">
+    <h1 class="display-5 fw-bold">Hi {{ user.first_name }}</h1>
+    <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+    <button class="btn btn-primary btn-lg" type="button">Go to Shop</button>
+</div>
+</div>
+
+<div class="container-fluid mb-4">
+<h2>Products</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+
+{% for i in "123456789" %}
+  <div class="col">
+    <div class="card bg-dark text-white">
+      <img src="https://bit.ly/3tF3b3t" class="card-img-top" alt="https://bit.ly/3tF3b3t">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <span class="btn btn-success"style = "cursor:auto;" >$400</span>
+        <div>
+        <form>
+        <button class="btn btn-primary mt-3">Buy Now!</button>
+        </div>
+        </form>
+        <form>
+        <button class="btn btn-primary mt-3">Add to Cart</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+  </div>
+</div>
+{% endblock body %}
