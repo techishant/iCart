@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block head %}
+<link rel="stylesheet" href="/static/auth.css">
+{% endblock head %}
+{% block bodyAttr %} onload="tog('{{auth}}')" {% endblock bodyAttr %}
+{% block body %}
+<div class="wrapper"> 
+    <div class="authCard">
+        <div class="btnBox">
+            <div class="bg"></div>
+            <button onclick="tog('login')">Log In</button>
+            <button onclick="tog('logup')">Register</button>
+        </div>
+            <div class="form_cont">
+                <form class="LogInForm">
+                    <label for="useername">Username</label>
+                    <input type="text" id="useername" placeholder="You username here......">
+                    <label for="Password">Passoword</label>
+                    <input type="password" id="Password" placeholder="Your Password here....">
+                    <li class="ruler"></li>
+                    <button type="submit">Log In</button>
+                </form>
+                <form class="LogUpForm">
+                    <label for="useername">Username</label>
+                    <input type="text" id="useername" placeholder="You username here......">
+                    <label for="mail">Email</label>
+                    <input type="text" id="mail" placeholder="example@123.com">
+                    <div class="nam_div">
+                        <div>
+                            <label for="f_name">First Name</label>
+                            <input type="text" id="f_name" placeholder="First Name">
+                        </div>
+                        <div>
+                            <label for="l_name">Last Name</label>
+                            <input type="text" id="l_name" placeholder="Last name">
+                        </div>
+                    </div>
+                    <label for="Password">Passoword</label>
+                    <input type="password" id="Password" placeholder="Your Password here....">
+                    <li class="ruler"></li>
+                    <button type="submit">Log Up</button>
+                </form>
+            </div>
+    </div>
+</div>
+{% block bottom %}
+<script src="/static/auth.js"></script>{% endblock bottom %}
+{% endblock body %}

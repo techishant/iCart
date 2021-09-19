@@ -11,6 +11,12 @@ def homePage(request):
 def aboutPage(request):
     return render(request, 'about.html')
 
+def loginPage(request):
+    return render(request,'auth.html', context={'auth':'login'})
+
+def registerPage(request):
+    return render(request,'auth.html', context={'auth':'logup'})
+
 @login_required(login_url='/admin')
 def contactPage(request):
     if request.method == 'POST':

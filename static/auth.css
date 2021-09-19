@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Poppins';
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100%;
+    background: #252627;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.authCard{
+    /* height: 470px; */
+    height: 320px;
+    width: 350px;
+    color: #252627;
+    background: #eee;
+    border-radius: 25px;
+    padding: 16px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: .5s;
+}
+
+.btnBox{
+    width: fit-content;
+    height: 50px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(190, 190, 190, 0.699);
+    border-radius: 25px;
+}
+
+.bg{
+    position: absolute;
+    /* width: 157px; */
+    width: 50%;
+    border-radius: 25px;
+    height: 50px;
+    background: rgb(10, 10, 10);
+    transition: .5s;
+    left: 0;
+}
+
+.authCard .btnBox button{
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    width: 156px;
+    border-radius: 25px;
+    background: transparent;
+    border: none;
+    outline:none;
+    color: white;
+    transition: .5s;
+}
+
+.authCard .btnBox button:nth-child(3){
+    color: black;
+}
+
+.LogInForm, .LogUpForm{
+    margin: 18px 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* background: red; */
+    padding: 4px 5px;
+    width: 100%;
+}
+
+
+.LogInForm button, .LogUpForm button{
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: rgb(10,10,10);
+    color: white;
+}
+
+.LogInForm label,input{
+    display: block;
+}
+
+.LogUpForm label,input{display: block;}
+
+.LogInForm label, .LogUpForm label{
+    font-size: 18px;
+    font-weight: bold;
+}
+.ruler{
+    width: 100%;
+    list-style: none;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.664);
+    border-radius: 25px;
+    margin: 10px 0;
+}
+.LogInForm input, .LogUpForm input{
+    padding: 2px;
+    width: 100%;
+    height: 38px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    transition: .5s;
+    border-radius: 2px;
+    margin: 4px 0;
+}
+
+.LogInForm input:focus, .LogUpForm input:focus{
+    /* transition: .5s; */
+    box-shadow: 0 0 1px 2px rgba(68, 112, 255, 0.712), 0 0 2px 5px rgb(149, 187, 255);
+}
+
+.LogUpForm .nam_div{
+    /* background: red; */
+    display: flex;
+}
+
+.LogUpForm .nam_div div:nth-child(1){
+    margin-right: 5px;
+}
+.LogUpForm .nam_div div:nth-child(2){
+    margin-left: 5px;
+}
+
+.LogUpForm{
+    margin: 20px;
+}
+
+.form_cont{
+    width: 670px;
+    display: flex;
+    transition: .5s;
+}
+
+@media screen and (max-width:450px) {
+    .authCard .btnBox button{
+        width: 141px;
+    }
+    .authCard .btnBox {
+        margin: auto;
+    }
+
+    .authCard{
+        width: 334px;
+    }
+
+    .form_cont{
+        width: 654px;
+    }
+}
