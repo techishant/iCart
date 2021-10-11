@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, logout, login
 from .models import *
+from django.contrib.auth.models import User
 from django.contrib import messages
 
 # Create your views here.
@@ -22,6 +23,19 @@ def loginPage(request):
     return render(request,'auth.html', context={'auth':'login'})
 
 def registerPage(request):
+    if request.method == "POST":
+        username = request.POST['Rusername']
+        mail = request.POST['email']
+        fName = request.POST['fName']
+        lName = request.POST['lName']
+        password = request.POST['Rpass']
+        newUser = User.objects.create_user(username, mail, password)
+        newUser.first_name = fName
+        newUser.last_name = lName
+        newUser.save()
+        messages.success(request, "Account made Successfully")
+        print(username, mail, fName, lName, password)
+        return redirect("/login")
     return render(request,'auth.html', context={'auth':'logup'})
 
 @login_required(login_url='/login')

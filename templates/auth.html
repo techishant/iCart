@@ -21,23 +21,24 @@
                     <li class="ruler"></li>
                     <button type="submit">Log In</button>
                 </form>
-                <form class="LogUpForm">
+                <form class="LogUpForm" method="post" action="/logup">
+                    {% csrf_token %}
                     <label for="useername">Username</label>
-                    <input type="text" id="useername" placeholder="You username here......">
+                    <input name="Rusername" type="text" id="useername" placeholder="You username here......">
                     <label for="mail">Email</label>
-                    <input type="text" id="mail" placeholder="example@123.com">
+                    <input name="email" type="text" id="mail" placeholder="example@123.com">
                     <div class="nam_div">
                         <div>
                             <label for="f_name">First Name</label>
-                            <input type="text" id="f_name" placeholder="First Name">
+                            <input name="fName" type="text" id="f_name" placeholder="First Name">
                         </div>
                         <div>
                             <label for="l_name">Last Name</label>
-                            <input type="text" id="l_name" placeholder="Last name">
+                            <input name="lName" type="text" id="l_name" placeholder="Last name">
                         </div>
                     </div>
                     <label for="Password">Passoword</label>
-                    <input type="password" id="Password" placeholder="Your Password here....">
+                    <input name="Rpass" type="password" id="Password" placeholder="Your Password here....">
                     <li class="ruler"></li>
                     <button type="submit">Log Up</button>
                 </form>
