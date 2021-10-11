@@ -12,11 +12,12 @@
             <button onclick="tog('logup')">Register</button>
         </div>
             <div class="form_cont">
-                <form class="LogInForm">
+                <form class="LogInForm" method="post" action="/login">
+                {% csrf_token %}
                     <label for="useername">Username</label>
-                    <input type="text" id="useername" placeholder="You username here......">
+                    <input name="Lusername" type="text" id="useername" placeholder="You username here......">
                     <label for="Password">Passoword</label>
-                    <input type="password" id="Password" placeholder="Your Password here....">
+                    <input name="Lpass" type="password" id="Password" placeholder="Your Password here....">
                     <li class="ruler"></li>
                     <button type="submit">Log In</button>
                 </form>

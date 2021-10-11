@@ -34,6 +34,14 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> {% endcomment %}
+      <div class="d-flex">
+      {% if not user.is_authenticated %}
+        <a href="/login" class="btn btn-outline-success me-2">Log In</a>
+        <a href="/logup" class="btn btn-outline-success me-2">Log Up</a>
+      {% else %}
+              <a href="/logout" class="btn btn-outline-success me-2">Log Out</a>
+      {% endif %}
+      </div>
     </div>
   </div>
 </nav>

@@ -1,6 +1,7 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, logout, login
 from .models import *
 from django.contrib import messages
 
@@ -12,12 +13,18 @@ def aboutPage(request):
     return render(request, 'about.html')
 
 def loginPage(request):
+    if request.method == 'POST':
+        username = request.POST['Lusername']
+        paswrd = request.POST['Lpass']
+        user = authenticate(request, username= username, password = paswrd)
+        messages.success(request, "Successfully logged in !!!")
+        return redirect("/")
     return render(request,'auth.html', context={'auth':'login'})
 
 def registerPage(request):
     return render(request,'auth.html', context={'auth':'logup'})
 
-@login_required(login_url='/admin')
+@login_required(login_url='/login')
 def contactPage(request):
     if request.method == 'POST':
         user = request.user.username
@@ -36,3 +43,8 @@ def contactPage(request):
     userContact = contact.objects.all().filter(user = request.user)
     # print(userContact[1].cont)
     return render(request, 'contact.html', context={'contact':userContact})
+
+def logoutPage(request):
+    logout(request)
+    messages.warning(request, "Successfully Logged out!!")
+    return redirect("/")
