@@ -13,14 +13,13 @@
 <h2>Products</h2>
 <div class="row row-cols-1 row-cols-md-3 g-4">
 
-{% for i in "123456789" %}
-  <div class="col">
-    <div class="card bg-dark text-white">
-      <img src="{% static 'product.jpg' %}" class="card-img-top" alt="https://bit.ly/3tF3b3t">
+{% for product in products %}
+  <div class="card bg-dark text-white">
+      <img src="{{ product.prodImg }}" class="card-img-top" alt="https://bit.ly/3tF3b3t">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <span class="btn btn-success"style = "cursor:auto;" >$400</span>
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{product.desc}}</p>
+        <span class="btn btn-success"style = "cursor:auto;" >${{product.price}}</span>
         <div>
         <form>
         <button class="btn btn-primary mt-3">Buy Now!</button>
@@ -31,7 +30,6 @@
         </form>
       </div>
     </div>
-  </div>
 {% endfor %}
   </div>
 </div>

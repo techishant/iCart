@@ -6,10 +6,12 @@ from django.contrib.auth import authenticate, logout, login
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib import messages
+from shop.models import product
 
 # Create your views here.
 def homePage(request):
-    return render(request, 'homePage.html')
+    products = product.objects.all()
+    return render(request, 'homePage.html', context={"products": products})
 
 def aboutPage(request):
     return render(request, 'about.html')
