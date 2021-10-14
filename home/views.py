@@ -1,3 +1,4 @@
+from django.http import response
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
@@ -18,8 +19,10 @@ def loginPage(request):
         username = request.POST['Lusername']
         paswrd = request.POST['Lpass']
         user = authenticate(request, username= username, password = paswrd)
-        messages.success(request, "Successfully logged in !!!")
-        return redirect("/")
+        if user is not None:
+            messages.success(request, "Successfully logged in !!!")
+            login(request, user)
+            return('/')
     return render(request,'auth.html', context={'auth':'login'})
 
 def registerPage(request):
