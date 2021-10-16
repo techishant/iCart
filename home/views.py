@@ -22,9 +22,9 @@ def loginPage(request):
         paswrd = request.POST['Lpass']
         user = authenticate(request, username= username, password = paswrd)
         if user is not None:
-            messages.success(request, "Successfully logged in !!!")
             login(request, user)
-            return('/')
+            messages.success(request, "Successfully logged in !!!")
+            return redirect('/')
     return render(request,'auth.html', context={'auth':'login'})
 
 def registerPage(request):

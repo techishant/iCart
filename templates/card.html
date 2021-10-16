@@ -1,11 +1,10 @@
-{% load static %}
-
 <div class="col">
     <div class="card bg-dark text-white">
-      <img src="{{ product.prodImg }}" class="card-img-top" alt="https://bit.ly/3tF3b3t">
+      <img src="/media/{{ product.prodImg }}" class="card-img-top" alt="{{product.name}}">
       <div class="card-body">
+        <small class="text-muted">{{product.seller}}</small>
         <h5 class="card-title">{{ product.name }}</h5>
-        <p class="card-text">{{product.desc}}</p>
+        <p class="card-text">{{product.desc|truncatechars:120}}</p>
         <span class="btn btn-success"style = "cursor:auto;" >${{product.price}}</span>
         <div>
         <form>
