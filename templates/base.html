@@ -10,6 +10,7 @@
   </head>
   <body {% block bodyAttr %}  {% endblock bodyAttr %} >
   {% include 'nav.html' %}
+  {% block embedNav %}{% endblock embedNav %}
     <div class="mainDiv py-2 container-fluid bg-dark">
     {% if messages %}
       {% for message in messages %}

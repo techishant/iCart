@@ -1,4 +1,4 @@
-<div class="col">
+<a role="link" href="/shop/{{product.slug}}" style="display: block; text-decoration: none;" class="col">
     <div class="card bg-dark text-white">
       <img src="/media/{{ product.prodImg }}" class="card-img-top" alt="{{product.name}}">
       <div class="card-body">
@@ -7,7 +7,9 @@
         <p class="card-text">{{product.desc|truncatechars:120}}</p>
         <span class="btn btn-success"style = "cursor:auto;" >${{product.price}}</span>
         <div>
-        <form>
+        <form method="post" action="/shop/checkout">
+        {% csrf_token %}
+        <input type="hidden" value="{{product.slug}}" name="slug">
         <button class="btn btn-primary mt-3">Buy Now!</button>
         </div>
         </form>
@@ -16,4 +18,4 @@
         </form>
       </div>
     </div>
-</div>
+</a>

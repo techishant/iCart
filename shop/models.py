@@ -9,5 +9,6 @@ class product(models.Model):
     seller = models.CharField(blank=False, max_length=50)
     price = models.IntegerField(blank=False, default=0)
     date = models.DateField(default=timezone.now)
+    slug = models.CharField(default="Not Available", max_length=120)
     def __str__(self):
         return self.name + ' by ' + self.seller

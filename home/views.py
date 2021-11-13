@@ -27,6 +27,9 @@ def loginPage(request):
             return redirect('/')
     return render(request,'auth.html', context={'auth':'login'})
 
+def error_404(request, exception):
+    return render(request, "errors/404.html", context={'exception': exception})
+
 def registerPage(request):
     if request.method == "POST":
         username = request.POST['Rusername']
@@ -67,3 +70,6 @@ def logoutPage(request):
     logout(request)
     messages.warning(request, "Successfully Logged out!!")
     return redirect("/")
+
+def profilePage(request):
+    return render(request, 'profilePage.html')
