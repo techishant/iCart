@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    {% include 'nav.html' %}
+</div>
+
+<!-- All Products -->
+
+<div class="small-container">
+    <div class="row row-2">
+        <h2>All Products</h2>
+        <select>
+            <option>Default Sort</option>
+            <option>Sort By Price</option>
+            <option>Sort By Popularity</option>
+            <option>Sort By Rating</option>
+            <option>Sort By Sale</option>
+        </select>
+    </div>
+    {% for row in "1234" %}
+        <div class="row">
+            {% for card in "1234" %}
+                {% include 'card.html' %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+    <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
+    </div>
+</div>
+
+{% endblock body %}
