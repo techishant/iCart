@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block body %}
     <div class="container">
         {% include 'nav.html' %}
@@ -9,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-2">
-                    <img src="images/image1.png" width="100%">
+                    <img src="{% static 'images/image1.png' %}" width="100%">
                 </div>
                 <div class="col-2">
                     <div class="form-container">
@@ -36,5 +37,25 @@
             </div>
         </div>
     </div>
+
+{% block scripts %}
+<script>
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var Indicator = document.getElementById("Indicator");
+    function register() {
+        RegForm.style.transform = "translatex(0px)";
+        LoginForm.style.transform = "translatex(0px)";
+        Indicator.style.transform = "translateX(100px)";
+
+    }
+    function login() {
+        RegForm.style.transform = "translatex(300px)";
+        LoginForm.style.transform = "translatex(300px)";
+        Indicator.style.transform = "translate(0px)";
+
+    }
+</script>
+{% endblock scripts %}
 
 {% endblock body %}
