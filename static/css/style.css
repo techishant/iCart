@@ -222,7 +222,7 @@ small{
     text-align: center;
 }
 .footer-col-2 img{
-    width: 180px;
+    height: 53.39px;
     margin-bottom: 20px;
 }
 .footer-col-3, .footer-col-4{
@@ -250,7 +250,7 @@ ul{
 
 .copyright a{
     text-decoration: underline !important;
-    color: white !important;
+    color: #8a8a8a !important;
 }
 
 .menu-icon{
