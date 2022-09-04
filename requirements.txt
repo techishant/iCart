@@ -3,3 +3,4 @@ backports.zoneinfo==0.2.1
 Django==4.0.3
 sqlparse==0.4.2
 tzdata==2021.5
+Pillow==9.2.0
